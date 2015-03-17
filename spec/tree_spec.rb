@@ -115,5 +115,11 @@ describe Tree do
         expect(@tree.pre_order).to eq([2, 0, -2, -3, -1, 4, 3, 6, 5])
       end
     end
+
+    describe "#in_order" do
+      it "should output an array of values after in-order traversal" do
+        expect(@tree.in_order).to eq([-3, -2, -1, 0, 2, 3, 4, 5, 6])
+      end
+    end
   end
 end
