@@ -4,6 +4,8 @@ class Node
 
   attr_reader :value
 
+  attr_accessor :discovered
+
   def initialize value
     @value = value
     @left = @right = nil
@@ -52,5 +54,20 @@ class Tree
     post_order root.left, values if root.left
     post_order root.right, values if root.right
     values << root.value
+  end
+
+  def level_order
+    queue = []
+    values = []
+    queue << @root
+
+    while !queue.empty?
+      node = queue.shift
+      values << node.value
+      queue << node.left if node.left
+      queue << node.right if node.right
+    end
+
+    values
   end
 end
