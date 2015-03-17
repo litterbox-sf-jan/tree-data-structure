@@ -30,4 +30,12 @@ class Tree
       root.right = Node.new value
     end
   end
+
+  def pre_order root = nil, values = []
+    root ||= @root
+    values << root.value
+    pre_order root.left, values if root.left
+    pre_order root.right, values if root.right
+    values
+  end
 end
