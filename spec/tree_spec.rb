@@ -96,4 +96,24 @@ describe Tree do
       expect(@tree.root.value).to eq(2)
     end
   end
+
+  describe "traversal" do
+    before do
+      @tree = Tree.new(2)
+      @tree.insert(0)
+      @tree.insert(-2)
+      @tree.insert(4)
+      @tree.insert(-3)
+      @tree.insert(6)
+      @tree.insert(3)
+      @tree.insert(5)
+      @tree.insert(-1)
+    end
+
+    describe "#pre_order" do
+      it "should output an array of values after pre-order traversal" do
+        expect(@tree.pre_order).to eq([2, 0, -2, -3, -1, 4, 3, 6, 5])
+      end
+    end
+  end
 end
