@@ -39,9 +39,6 @@ class Tree
     values
   end
 
-  def pre_order_find root = nil, search_for = nil
-  end
-
   def in_order root = nil, values = []
     root ||= @root
     in_order root.left, values if root.left
