@@ -127,5 +127,11 @@ describe Tree do
         expect(@tree.post_order).to eq([-3, -1, -2, 0, 3, 5, 6, 4, 2])
       end
     end
+
+    describe "#level_order" do
+      it "should output an array of values after post-order traversal" do
+        expect(@tree.level_order).to eq([2, 0, 4, -2, 3, 6, -3, -1, 5])
+      end
+    end
   end
 end
