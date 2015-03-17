@@ -46,4 +46,11 @@ class Tree
     in_order root.right, values if root.right
     values
   end
+
+  def post_order root = nil, values = []
+    root ||= @root
+    post_order root.left, values if root.left
+    post_order root.right, values if root.right
+    values << root.value
+  end
 end
