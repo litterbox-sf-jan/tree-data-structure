@@ -4,8 +4,6 @@ class Node
 
   attr_reader :value
 
-  attr_accessor :discovered
-
   def initialize value
     @value = value
     @left = @right = nil
