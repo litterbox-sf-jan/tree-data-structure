@@ -134,4 +134,36 @@ describe Tree do
       end
     end
   end
+
+  describe "#find" do
+    before do
+      @tree = Tree.new(2)
+      @tree.insert(0)
+      @tree.insert(-2)
+      @tree.insert(4)
+      @tree.insert(-3)
+      @tree.insert(6)
+      @tree.insert(3)
+      @tree.insert(5)
+      @tree.insert(-1)
+    end
+     
+    it "should return true for all nodes in the tree" do
+      expect(@tree.find(2)).to eq(true)
+      expect(@tree.find(0)).to eq(true)
+      expect(@tree.find(-2)).to eq(true)
+      expect(@tree.find(4)).to eq(true)
+      expect(@tree.find(-3)).to eq(true)
+      expect(@tree.find(6)).to eq(true)
+      expect(@tree.find(3)).to eq(true)
+      expect(@tree.find(5)).to eq(true)
+      expect(@tree.find(-1)).to eq(true)
+    end
+
+    it "should return false for nodes not in the tree" do
+      expect(@tree.find(1000)).to eq(false)
+      expect(@tree.find(-1000)).to eq(false)
+    end
+    
+  end
 end
